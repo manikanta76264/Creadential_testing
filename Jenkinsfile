@@ -2,10 +2,11 @@ pipeline{
 	agent any
 	
 		stages{
+			withCredentials([usernamePassword(credentialsId: 'credentials_testing', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')])
 			stage("testing global creadentials"){
-				withCredentials([usernamePassword(credentialsId: 'credentials_testing', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')])
+				steps{
 				echo "${USERNAME}  ${PASSWORD}"
-
+				}
 			}
 
 		}
