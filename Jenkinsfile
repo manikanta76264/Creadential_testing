@@ -5,8 +5,7 @@ pipeline{
 			steps{
 		              withCredentials([usernamePassword(credentialsId: 'credentials_testing', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')])
 				echo %USERNAME%
-			     }
-			}
+						}
 
 		}
 	
